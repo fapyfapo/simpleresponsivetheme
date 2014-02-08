@@ -188,7 +188,9 @@
     <!-- right infos-->
     <div id="pb-right-column" class="six columns">
         <div class="{if isset($images) && count($images) > 1}row{/if}">
-            <div class="two columns thumbs_list_row">
+          {if isset($images) && count($images) > 0}
+            {if isset($images) && count($images) > 1}
+              <div class="two columns thumbs_list_row">
                 <!-- thumbnails -->
                 <div id="views_block" class="{if isset($images) && count($images) < 2}hidden{/if}">
                     <div id="thumbs_list">
@@ -213,7 +215,9 @@
                     {/if}
                 </div>
                 {if isset($images) && count($images) > 1}<p class="resetimg clear"><span id="wrapResetImages" style="display: none;"><img src="{$img_dir}icon/cancel_11x13.gif" alt="{l s='Cancel'}" width="11" height="13"/> <a id="resetImages" href="{$link->getProductLink($product)}" onclick="$('span#wrapResetImages').hide('slow');return (false);">{l s='Display all pictures'}</a></span></p>{/if}
-            </div>
+              </div>
+            {/if}
+          {/if}
             <!-- product img-->
             <div id="image-block" class="{if isset($images) && count($images) > 1}ten columns{/if}">
                 {if $have_image}
